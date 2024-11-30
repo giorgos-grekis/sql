@@ -1,0 +1,8 @@
+mysql types
+https://dev.mysql.com/doc/refman/8.4/en/data-types.html
+
+MySQL CAST Function
+https://www.mysqltutorial.org/mysql-functions/mysql-cast-function/
+
+slides
+https://webdev.slides.com/coltsteele/getting-started-with-mysql/fullscreen
