@@ -1,6 +1,10 @@
 -- To list available databases:
 show databases;
 
+--  Show what database have select
+select databese();
+
+
 -- The general command for creating a database:
 CREATE DATABASE <database_name>;
 
