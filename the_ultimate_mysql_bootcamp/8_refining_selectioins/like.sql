@@ -25,3 +25,11 @@ FROM
     books
 WHERE
     author_fname LIKE '%n';
+
+-- Escaping Wildcards '%' => '\%'
+SELECT
+    *
+FROM
+    books
+WHERE
+    title LIKE '%\%%';
