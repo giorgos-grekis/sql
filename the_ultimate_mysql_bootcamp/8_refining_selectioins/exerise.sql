@@ -7,13 +7,9 @@
 -- | Where I'm Calling From: Selected Stories            |
 -- | Oblivion: Stories                                   |
 -- +-----------------------------------------------------+
-SELECT
-    title
-FROM
-    books
-WHERE
-    title LIKE '%stories%';
-
+SELECT title
+FROM books
+WHERE title LIKE '%stories%';
 -- Find The Longest Book
 -- Print Out the Title and Page Count
 -- +-------------------------------------------+-------+
@@ -21,16 +17,11 @@ WHERE
 -- +-------------------------------------------+-------+
 -- | The Amazing Adventures of Kavalier & Clay |   634 |
 -- +-------------------------------------------+-------+
-SELECT
-    title,
+SELECT title,
     pages
-FROM
-    books
-ORDER BY
-    pages DESC
-LIMIT
-    1;
-
+FROM books
+ORDER BY pages DESC
+LIMIT 1;
 -- Print a summary containing the title and year, for the 3 most recent books
 -- +-----------------------------+
 -- | summary                     |
@@ -39,15 +30,10 @@ LIMIT
 -- | Norse Mythology - 2016      |
 -- | 10% Happier - 2014          |
 -- +-----------------------------+
-SELECT
-    CONCAT (title, ' - ', released_year) AS summary
-FROM
-    books
-ORDER BY
-    released_year DESC
-LIMIT
-    3;
-
+SELECT CONCAT (title, ' - ', released_year) AS summary
+FROM books
+ORDER BY released_year DESC
+LIMIT 3;
 -- Find all books with an author_lname
 -- that contains a space(" ")
 -- +----------------------+----------------+
@@ -56,14 +42,10 @@ LIMIT
 -- | Oblivion: Stories    | Foster Wallace |
 -- | Consider the Lobster | Foster Wallace |
 -- +----------------------+----------------+
-SELECT
-    title,
+SELECT title,
     author_lname
-FROM
-    books
-WHERE
-    author_lname LIKE '% %';
-
+FROM books
+WHERE author_lname LIKE '% %';
 -- Find The 3 Books With The Lowest Stock
 -- Select title, year, and stock
 -- +-----------------------------------------------------+---------------+----------------+
@@ -73,26 +55,17 @@ WHERE
 -- | Where I'm Calling From: Selected Stories            |          1989 |             12 |
 -- | What We Talk About When We Talk About Love: Stories |          1981 |             23 |
 -- +-----------------------------------------------------+---------------+----------------+
-SELECT
-    title,
+SELECT title,
     released_year,
     stock_quantity
-FROM
-    books
-ORDER BY
-    stock_quantity
-LIMIT
-    3;
-
-SELECT
-    title,
+FROM books
+ORDER BY stock_quantity
+LIMIT 3;
+SELECT title,
     author_lname
-FROM
-    books
-ORDER BY
-    author_lname,
+FROM books
+ORDER BY author_lname,
     title;
-
 -- Print title and author_lname, sorted first by author_lname and then by title
 -- +-----------------------------------------------------+----------------+
 -- | title                                               | author_lname   |
@@ -117,15 +90,11 @@ ORDER BY
 -- | Just Kids                                           | Smith          |
 -- | Cannery Row                                         | Steinbeck      |
 -- +-----------------------------------------------------+----------------+
-SELECT
-    title,
+SELECT title,
     author_lname
-FROM
-    books
-ORDER BY
-    author_lname,
+FROM books
+ORDER BY author_lname,
     title;
-
 -- -- Sorted Alphabetically By Last Name
 -- +---------------------------------------------+
 -- | yell                                        |
@@ -150,8 +119,7 @@ ORDER BY
 -- | MY FAVORITE AUTHOR IS PATTI SMITH!          |
 -- | MY FAVORITE AUTHOR IS JOHN STEINBECK!       |
 -- +---------------------------------------------+
-SELECT
-    CONCAT (
+SELECT CONCAT (
         'MY FAVORITE AUTHOR IS',
         ' ',
         UPPER(author_fname),
@@ -159,7 +127,5 @@ SELECT
         UPPER(author_lname),
         '!'
     ) AS yell
-FROM
-    books
-ORDER BY
-    author_lname;
+FROM books
+ORDER BY author_lname;
